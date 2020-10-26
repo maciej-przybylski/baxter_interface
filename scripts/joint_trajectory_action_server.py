@@ -32,6 +32,7 @@ Baxter RSDK Joint Trajectory Controller
     Unlike other robots running ROS, this is not a Motor Controller plugin,
     but a regular node using the SDK interface.
 """
+from __future__ import print_function
 import argparse
 
 import rospy
