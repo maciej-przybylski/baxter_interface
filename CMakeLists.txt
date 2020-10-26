@@ -38,8 +38,7 @@ catkin_package(
   baxter_core_msgs
 )
 
-install(
-  DIRECTORY scripts/
+catkin_install_python(
+  PROGRAMS scripts/gripper_action_server.py scripts/head_action_server.py scripts/joint_trajectory_action_server.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  USE_SOURCE_PERMISSIONS
 )
