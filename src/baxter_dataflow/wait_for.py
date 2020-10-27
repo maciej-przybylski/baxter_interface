@@ -42,7 +42,7 @@ def wait_for(test, timeout=1.0, raise_on_error=True, rate=100,
     @param timout_msg: message to supply to the timeout exception
     @param body: optional function to execute while waiting
     """
-    max_iter = timeout/rate
+    max_iter = timeout*rate
     rate = rospy.Rate(rate)
     notimeout = (timeout < 0.0) or timeout == float("inf")
     iters = 0
@@ -52,7 +52,7 @@ def wait_for(test, timeout=1.0, raise_on_error=True, rate=100,
             if raise_on_error:
                 raise OSError(errno.ESHUTDOWN, "ROS Shutdown")
             return False
-        elif (not notimeout) and iters < max_iter:
+        elif (not notimeout) and iters > max_iter:
             if raise_on_error:
                 raise OSError(errno.ETIMEDOUT, timeout_msg)
             return False
