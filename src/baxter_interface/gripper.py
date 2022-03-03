@@ -953,7 +953,7 @@ class Gripper(object):
         return {
         EndEffectorProperties.SUCTION_CUP_GRIPPER: 'suction',
         EndEffectorProperties.ELECTRIC_GRIPPER: 'electric',
-        EndEffectorProperties.PASSIVE_GRIPPER: 'custom',
+        EndEffectorProperties.CUSTOM_GRIPPER: 'custom',
         }.get(self._prop.ui_type, None)
 
     def hardware_id(self):
